@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form with Map</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            /* display: flex;
+            justify-content: center;
+            align-items: center; */
+            height: 100vh;
+            margin: 0;
+        }
+        .main-container {
+            display: flex;
+            width: 100%;
+            max-width: 1200px;
+            /* height: 80vh; */
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        .map-container {
+            width: 50%;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            font-size: 14px;
+            color: #333;
+        }
+        input[type="text"], input[type="email"], input[type="tel"], textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        textarea {
+            resize: vertical;
+        }
+        .form-group input[type="checkbox"] {
+            margin-top: 10px;
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+        .star-rating {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+        .star-rating input[type="radio"] {
+            display: none;
+        }
+        .star-rating label {
+            font-size: 30px;
+            cursor: pointer;
+            margin: 0 5px;
+            color: #ccc;
+        }
+        .star-rating input[type="radio"]:checked ~ label {
+            color: gold;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+          
+        }
+        button:hover {
+            background-color: #45a049;
+        } 
+        .abc{
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container-fluid">
+          <a class="navbar-brand rounded-circle img-fluid img-thumbnail" href="#">
+            <img src="./images/logoooo.avif" alt="logo" style="border-radius: 50%; width: 50px; height: 50px;">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./contact.html">Contact</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Product
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item product-filter filter-btn" href="#galleryGrid1" data-category="spatler">Stapler</a></li>
+                  <li><a class="dropdown-item filter-btn" href="#galleryGrid1"  data-category="books">Books</a></li>
+                  <li><a class="dropdown-item filter-btn" href="#galleryGrid1"  data-category="painting">Painting</a></li>
+                  <li><a class="dropdown-item filter-btn" href="#galleryGrid1"  data-category="others">Other</a></li>
+                </ul>
+              </li>
+            </ul>
+            <div class="ms-auto" style="margin-right: 15px;">
+              <a href="./login.html" target="_blank"><i class="fa-solid fa-user-plus" style="padding: 10px;"></i></a>
+              <a href="./about us.html"><i class="fa-solid fa-cart-plus" style="padding: 10px;"></i></a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      
+
+
+
+
+
+
+
+
+<div class="main-container">
+    <div class="form-container">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                <div id="nameError" class="error"></div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <div id="emailError" class="error"></div>
+            </div>
+            <div class="form-group">
+                <label for="contact">Contact Number</label>
+                <input type="tel" id="contact" name="contact" placeholder="Enter your contact number" required>
+                <div id="contactError" class="error"></div>
+            </div>
+            <div class="form-group">
+                <label for="comments">Comments</label>
+                <textarea id="comments" name="comments" placeholder="Enter your comments (optional)"></textarea>
+            </div>
+            <div class="star-rating">
+                <label for="star1">&#9733;</label>
+                <input type="radio" id="star1" name="rating" value="1">
+                <label for="star2">&#9733;</label>
+                <input type="radio" id="star2" name="rating" value="2">
+                <label for="star3">&#9733;</label>
+                <input type="radio" id="star3" name="rating" value="3">
+                <label for="star4">&#9733;</label>
+                <input type="radio" id="star4" name="rating" value="4">
+                <label for="star5">&#9733;</label>
+                <input type="radio" id="star5" name="rating" value="5">
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <div class="map-container">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509665!2d144.95373531531642!3d-37.816279379751664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0x5045675218ce6e0!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2s!4v1614313893674!5m2!1sen!2s" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+        </iframe>
+    </div>
+</div> 
+<footer class="bg-dark text-white text-center p-4 abc">
+    <p>© 2024 Karachi Stationers. All rights reserved.</p>
+    <p>Contact: +92 300 1234567 | Email: info@karachistationers.com</p>
+    <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a> 
+  <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram ins"></i></a> 
+  <a href="https://www.whatsapp.com/" target="_blank"><i class="bi bi-whatsapp"></i></a>
+  
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+        event.preventDefault();+
+        let isValid = true;
+
+        const name = document.getElementById("name").value;
+        const nameError = document.getElementById("nameError");
+        if (name.length < 3) {
+            nameError.textContent = "Name must be at least 3 characters.";
+            isValid = false;
+        } else {
+            nameError.textContent = "";
+        }
+
+        const email = document.getElementById("email").value;
+        const emailError = document.getElementById("emailError");
+        if (!email.includes(".com")) {
+            emailError.textContent = "Email must contain .com.";
+            isValid = false;
+        } else {
+            emailError.textContent = "";
+        }
+
+        const contact = document.getElementById("contact").value;
+        const contactError = document.getElementById("contactError");
+        const contactRegex = /^[0-9]{11}$/;
+        if (!contactRegex.test(contact)) {
+            contactError.textContent = "Contact number must be exactly 11 digits.";
+            isValid = false;
+        } else {
+            contactError.textContent = "";
+        }
+
+        if (isValid) {
+            alert("Form submitted successfully!");
+        }
+    });
+</script>
+
+</body>
+</html>

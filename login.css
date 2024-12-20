@@ -1,0 +1,157 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8; /* Soft light background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Form Container */
+.form-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Warm gradient from coral to orange */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeInScale 1.5s ease-out;
+}
+
+/* Form Card - New Color, Gradient, and Animation */
+.form-card {
+    background: linear-gradient(135deg, #474343, #535350); /* Gradient from yellow to golden yellow */
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 380px;
+    animation: popIn 1.5s ease-out; /* Animation for popping in */
+}
+
+/* Title & Subheading */
+h2 {
+    font-size: 32px;
+    color: #ffffff; /* Dark blue color for the title */
+    margin-bottom: 15px;
+    font-weight: bold;
+    animation: fadeInText 1.5s ease-out;
+}
+
+.subheading {
+    font-size: 14px;
+    color: #eff0f0; /* Greyish color for the subheading */
+    margin-bottom: 30px;
+    animation: fadeInText 1.7s ease-out;
+}
+
+/* Input Styles */
+.input-group {
+    margin-bottom: 25px;
+    text-align: left;
+    position: relative;
+}
+
+.input-group label {
+    font-size: 14px;
+    color: #dde1e6; /* Dark color for the label */
+    margin-bottom: 8px;
+    display: block;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #ecf0f1; /* Light grey input background */
+    color: #2c3e50; /* Dark text color */
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #3498db; /* Blue border color on focus */
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5); /* Soft blue glow on focus */
+}
+
+/* Error Message */
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 10px;
+    height: 20px;
+    transition: opacity 0.5s ease;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #0f0f0f; /* Blue button background */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #2b2c2c; /* Darker blue on hover */
+}
+
+.submit-btn:active {
+    background-color: #2b2c2c; /* Even darker blue on active */
+}
+
+/* Animations */
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInText {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
