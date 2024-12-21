@@ -46,26 +46,6 @@
             color: #333;
         }
 
-        .about-us {
-            background-color: #fff;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .about-us h2 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        .about-us p {
-            font-size: 18px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
         .products {
             display: flex;
             justify-content: center;
@@ -119,104 +99,87 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
         <div class="container-fluid">
-          <a class="navbar-brand rounded-circle img-fluid img-thumbnail" href="#">
-            <img src="./images/logoooo.avif" alt="logo" style="border-radius: 50%; width: 50px; height: 50px;">
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#about">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./contact.html">Contact</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Product
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item product-filter filter-btn" href="#galleryGrid1" data-category="spatler">Stapler</a></li>
-                  <li><a class="dropdown-item filter-btn" href="#galleryGrid1"  data-category="books">Books</a></li>
-                  <li><a class="dropdown-item filter-btn" href="#galleryGrid1"  data-category="painting">Painting</a></li>
-                  <li><a class="dropdown-item filter-btn" href="#galleryGrid1"  data-category="others">Other</a></li>
+            <a class="navbar-brand rounded-circle img-fluid img-thumbnail" href="#">
+                <img src="./images/logoooo.avif" alt="logo" style="border-radius: 50%; width: 50px; height: 50px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contact.html">Contact</a>
+                    </li>
                 </ul>
-              </li>
-            </ul>
-            <div class="ms-auto" style="margin-right: 15px;">
-              <a href="./login.html" target="_blank"><i class="fa-solid fa-user-plus" style="padding: 10px;"></i></a>
-              <a href="./about us.html"><i class="fa-solid fa-cart-plus" style="padding: 10px;"></i></a>
             </div>
-          </div>
         </div>
-      </nav>
-      
-      <div class="cart-info">
-        Total Items in Cart: <span id="cart-count">0</span>
+    </nav>
+
+    <div class="cart-info">
+        <h4>Cart</h4>
+        <ul id="cart-list" style="list-style: none; padding: 0;"></ul>
     </div>
-    
+
     <div class="container">
-        <!-- About Us Section -->
-       
-    
-        <!-- Product List -->
         <h2 style="text-align: center; margin-top: 30px;">Our Products</h2>
         <div class="products">
-            <!-- Product 1 -->
             <div class="product" data-name="Stapler" data-price="15">
-                <img src="./images/card66.png" alt="Stapler">
+                <img src="./images/kangrosta.png" alt="Stapler">
                 <h3>Stapler</h3>
-                <button onclick="addToCart()">Add to Cart</button>
+                <button onclick="addToCart('Stapler', 15)">Add to Cart</button>
             </div>
-    
-            <!-- Product 2 -->
             <div class="product" data-name="Notebook" data-price="8">
                 <img src="./images/books.png" alt="Notebook">
                 <h3>Notebook</h3>
-                <button onclick="addToCart()">Add to Cart</button>
+                <button onclick="addToCart('Notebook', 8)">Add to Cart</button>
             </div>
-    
-            <!-- Product 3 -->
             <div class="product" data-name="Pen" data-price="2">
-                <img src="./images/stapler.png" alt="Pen">
+                <img src="./images/other1.png" alt="Pen">
                 <h3>Pen</h3>
-                <button onclick="addToCart()">Add to Cart</button>
+                <button onclick="addToCart('Pen', 2)">Add to Cart</button>
             </div>
-    
-            <!-- Product 4 -->
             <div class="product" data-name="Pencil" data-price="1">
                 <img src="./images/pen.avif" alt="Pencil">
                 <h3>Pencil</h3>
-                <button onclick="addToCart()">Add to Cart</button>
+                <button onclick="addToCart('Pencil', 1)">Add to Cart</button>
             </div>
         </div>
     </div>
-    
-    
-<footer class="bg-dark text-white text-center p-4">
-    <p>© 2024 Karachi Stationers. All rights reserved.</p>
-    <p>Contact: +92 300 1234567 | Email: info@karachistationers.com</p>
-    <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a> 
-  <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram ins"></i></a> 
-  <a href="https://www.whatsapp.com/" target="_blank"><i class="bi bi-whatsapp"></i></a>
-  
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // Cart count variable to store the total number of items
-    let cartCount = 0;
 
-    // Function to add an item to the cart
-    function addToCart() {
-        cartCount++; // Increment cart count
-        document.getElementById('cart-count').textContent = cartCount; // Update cart count on the page
-    }
-</script>
+    <footer class="bg-dark text-white text-center p-4">
+        <p>© 2024 Karachi Stationers. All rights reserved.</p>
+    </footer>
 
+    <script>
+        const cart = {}; // Object to store cart items
+
+        function addToCart(productName, price) {
+            if (!cart[productName]) {
+                cart[productName] = { quantity: 0, price: price };
+            }
+
+            cart[productName].quantity++;
+            updateCartDisplay();
+        }
+
+        function updateCartDisplay() {
+            const cartList = document.getElementById('cart-list');
+            cartList.innerHTML = '';
+
+            for (const product in cart) {
+                const item = cart[product];
+                const li = document.createElement('li');
+                li.textContent = `${product} - Quantity: ${item.quantity}, Total: $${item.quantity * item.price}`;
+                cartList.appendChild(li);
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
